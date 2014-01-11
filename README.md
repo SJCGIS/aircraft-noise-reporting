@@ -1,4 +1,4 @@
-# citizen-service-request
+# stormwater-issue-reporting
 
 Stormwater Issue Reporting is a configuration of ArcGIS Server and a HTML 5 / JavaScript application that allows citizens to help collect information regarding stormwater problems in San Juan County WA.  The information provided will be used for the County stormwater basin planning project.  The purpose of the planning project is to identify areas where the County should build public structures to manage stormwater and where stormwater management is most effectively managed by individuals. It is a single application that can be used by citizens on a desktop PC, mobile phone, or tablet device.
 
