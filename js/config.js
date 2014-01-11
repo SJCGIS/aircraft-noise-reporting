@@ -49,13 +49,13 @@ dojo.declare("js.config", null, {
     // GENERAL SETTINGS
     // ------------------------------------------------------------------------------------------------------------------------
     // Set application title
-    ApplicationName: "Citizen Service Request",
+    ApplicationName: "San Juan County Stormwater Issue Reporting",
 
     // Set application icon path
     ApplicationIcon: "images/logo.png",
 
     // Set splash window content - Message that appears when the application starts
-    SplashScreenMessage: "<br/><b>Submit a Request for Service:</b><br/><br/>Please search for an address or click directly on the map to locate your request for service. Then, provide additional detail and click or tap Submit to initiate your request.</br></br>If you find a request has already been submitted, you can click or tap on the existing request, provide additional comments and increase the importance of the request.",
+    SplashScreenMessage: "<br/><b>Submit Ongoing Issues with Stormwater Utilities in San Juan County WA:</b><br/><br/>Please search for an address or click directly on the map to add an ongoing issue or concern. Then, provide additional detail and click or tap Submit to submit your concerns.</br></br>If you find a request has already been submitted, you can click or tap on the existing issue, provide additional comments and increase the importance of the issue.",
 
     // Set URL of help page/portal
     HelpURL: "help.htm",
@@ -67,16 +67,16 @@ dojo.declare("js.config", null, {
     // Please note: All base maps need to use the same spatial reference. By default, on application start the first basemap will be loaded
 
     BaseMapLayers: [{
-        Key: "parcelMap",
+        Key: "generalBasemap",
         ThumbnailSource: "images/parcelmap.png",
-        Name: "Streets",
-        MapURL: "http://tryitlive.arcgis.com/arcgis/rest/services/GeneralPurpose/MapServer"
+        Name: "General Basemap",
+        MapURL: "http://www.sjcgis.org/arcgis/rest/services/Basemaps/General_Basemap/MapServer"
 
     }, {
-        Key: "hybridMap",
+        Key: "aerialBasemap",
         ThumbnailSource: "images/imageryhybrid.png",
         Name: "Imagery",
-        MapURL: "http://tryitlive.arcgis.com/arcgis/rest/services/ImageryHybrid/MapServer"
+        MapURL: "http://www.sjcgis.org/arcgis/rest/services/Basemaps/Aerial_Basemap/MapServer"
     }],
     //This section allows you to add a feature or map service layer, it must be an layer, not a service
     //use the following format {URL: ""},{URL: ""},...
@@ -84,7 +84,7 @@ dojo.declare("js.config", null, {
     ],
 
     // Initial map extent. Use comma (,) to separate values and don t delete the last comma
-    DefaultExtent: "-9816010,5123000,-9809970,5129500",
+    DefaultExtent: "975352,414105,1238801,755006",
 
 
     // ------------------------------------------------------------------------------------------------------------------------
@@ -95,16 +95,16 @@ dojo.declare("js.config", null, {
 
     OperationalLayers: {
         //URL used for doing query task on the ServiceRequest layer
-        ServiceRequestLayerURL: "http://services.arcgis.com/b6gLrKHqgkQb393u/arcgis/rest/services/ServiceRequestTryItLive/FeatureServer/0",
+        ServiceRequestLayerURL: "http://www.sjcgis.org/arcgis/rest/services/Stormwater/Stormwater_Issues/FeatureServer/0",
         //Set the primary key attribute for servicerequest
-        RequestId: "${REQUESTID}",
+        RequestId: "${STORMWATERID}",
 
-        ServiceRequestMobileLayerURL: "http://services.arcgis.com/b6gLrKHqgkQb393u/arcgis/rest/services/ServiceRequestTryItLive/FeatureServer/0",
+        ServiceRequestMobileLayerURL: "http://www.sjcgis.org/arcgis/rest/services/Stormwater/Stormwater_Issues/FeatureServer/0",
 
         //URL used for doing query task on the comments layer
-        ServiceRequestCommentsLayerURL: "http://services.arcgis.com/b6gLrKHqgkQb393u/arcgis/rest/services/ServiceRequestTryItLive/FeatureServer/1",
+        ServiceRequestCommentsLayerURL: "http://www.sjcgis.org/arcgis/rest/services/Stormwater/Stormwater_Issues/FeatureServer/1",
         //Set the primary key attribute for the comments
-        CommentId: "${REQUESTID}"
+        CommentId: "${STORMWATERID}"
 
     },
 
@@ -114,13 +114,13 @@ dojo.declare("js.config", null, {
 
     // Info-window is a small, two line popup that gets displayed on selecting a feature
     // Set Info-window title. Configure this with text/fields
-    InfoWindowHeader: "Request ID: ${REQUESTID}",
+    InfoWindowHeader: "Issue ID: ${STORMWATERID}",
 
     // Choose content/fields for the info window
-    InfoWindowContent: "${REQUESTTYPE}",
+    InfoWindowContent: "${STORMWATERISSUE}",
 
     //Define Service request layer name
-    RequestLayerName: "REQUESTTYPE",
+    RequestLayerName: "STORMWATERISSUE",
 
     // ------------------------------------------------------------------------------------------------------------------------
     // INFO-POPUP SETTINGS
@@ -138,7 +138,7 @@ dojo.declare("js.config", null, {
     // Set the content to be displayed on the info-Popup. Define labels, field values, field types and field formats
     InfoWindowData: [{
         DisplayText: "Type:",
-        AttributeValue: "${REQUESTTYPE}",
+        AttributeValue: "${STORMWATERISSUE}",
         DataType: "string"
     }, {
         DisplayText: "Comment:",
@@ -146,7 +146,7 @@ dojo.declare("js.config", null, {
         DataType: "string"
     }, {
         DisplayText: "Date Submitted:",
-        AttributeValue: "${REQUESTDATE}",
+        AttributeValue: "${CREATEDDATE}",
         DataType: "date"
     }, {
         DisplayText: "Status:",
@@ -198,21 +198,21 @@ dojo.declare("js.config", null, {
         },
         Locators: [{
             DisplayText: "Address",
-            DefaultValue: "139 W Porter Ave Naperville IL 60540",
+            DefaultValue: "350 Court St",
             LocatorParamaters: ["SingleLine"],
-            LocatorURL: "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer",
+            LocatorURL: "http://www.sjcgis.org/arcgis/rest/services/Tools/Polaris_Geolocator/GeocodeServer",
             CandidateFields: "Loc_name, Score, Match_addr",
             DisplayField: "${Match_addr}",
             ZoomLevel: 7,
             AddressMatchScore: 80,
-            LocatorDefaultRequest: "77257",
+            LocatorDefaultRequest: "350 Court St",
             LocatorFieldName: 'Loc_name',
-            LocatorFieldValues: ["USA.StreetName", "USA.PointAddress", "USA.StreetAddress"]
+            LocatorFieldValues: ["Address"]
         }, {
-            DisplayText: "Request ID",
-            DefaultValue: "Naperville",
-            QueryString: "REQUESTID LIKE '${0}%'",
-            DisplayField: "${REQUESTID}"
+            DisplayText: "Issue ID",
+            DefaultValue: "111555",
+            QueryString: "STORMWATERID LIKE '${0}%'",
+            DisplayField: "${STORMWATERID}"
         }]
     },
 
@@ -220,7 +220,7 @@ dojo.declare("js.config", null, {
     // Note: DateFieldName refers to a date database field.
     // All other attributes refer to text database fields.
     DatabaseFields: {
-        RequestIdFieldName: "REQUESTID",
+        RequestIdFieldName: "STORMWATERID",
         CommentsFieldName: "COMMENTS",
         DateFieldName: "SUBMITDT",
         RankFieldName: "RANK"
@@ -228,14 +228,14 @@ dojo.declare("js.config", null, {
 
     //Define service request input fields for submitting a new request
     ServiceRequestFields: {
-        RequestIdFieldName: "REQUESTID",
-        RequestTypeFieldName: "REQUESTTYPE",
+        RequestIdFieldName: "STORMWATERID",
+        RequestTypeFieldName: "STORMWATERISSUE",
         CommentsFieldName: "COMMENTS",
         NameFieldName: "NAME",
         PhoneFieldName: "PHONE",
         EmailFieldName: "EMAIL",
         StatusFieldName: "STATUS",
-        RequestDateFieldName: "REQUESTDATE"
+        RequestDateFieldName: "CREATEDDATE"
     },
 
     // Set info-pop fields for adding and displaying comment
@@ -249,7 +249,7 @@ dojo.declare("js.config", null, {
     // ------------------------------------------------------------------------------------------------------------------------
 
     // Set geometry service URL
-    GeometryService: "http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
+    GeometryService: "http://www.sjcgis.org/arcgis/rest/services/Utilities/Geometry/GeometryServer",
 
     // ------------------------------------------------------------------------------------------------------------------------
     // SETTINGS FOR MAP SHARING
