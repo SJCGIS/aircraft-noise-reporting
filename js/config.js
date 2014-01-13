@@ -69,7 +69,7 @@ dojo.declare("js.config", null, {
     BaseMapLayers: [{
         Key: "generalBasemap",
         ThumbnailSource: "images/parcelmap.png",
-        Name: "General Basemap",
+        Name: "Streets",
         MapURL: "http://www.sjcgis.org/arcgis/rest/services/Basemaps/General_Basemap/MapServer"
 
     }, {

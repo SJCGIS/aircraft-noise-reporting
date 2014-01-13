@@ -149,7 +149,7 @@ function ShowLocatedAddress(candidates) {
                 }
             }
         }
-        if (candidatesLength == 0 || candidatesLength == candidates.length) {
+        if (candidatesLength == 0 || candidatesLength != candidates.length) {
             var tr = document.createElement("tr");
             tBody.appendChild(tr);
             var td1 = document.createElement("td");
@@ -189,7 +189,7 @@ function LocateAddressOnMap(mapPoint) {
     }
     if (mapPoint) {
         var ext = GetExtent(mapPoint);
-        map.setExtent(ext.getExtent().expand(2));
+        map.setExtent(ext.getExtent().expand(15));
         var graphic = new esri.Graphic(mapPoint, locatorMarkupSymbol, {
             "Locator": true
         }, null);
@@ -494,7 +494,7 @@ function ShowMyLocation() {
             }
             mapPoint = newPointCollection[0].getPoint(0);
             var ext = GetExtent(mapPoint);
-            map.setExtent(ext.getExtent().expand(2));
+            map.setExtent(ext.getExtent().expand(15));
             var graphic = new esri.Graphic(mapPoint, locatorMarkupSymbol, {
                 "Locator": true
             }, null);
