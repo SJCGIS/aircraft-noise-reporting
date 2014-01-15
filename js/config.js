@@ -149,10 +149,6 @@ dojo.declare("js.config", null, {
         DisplayText: "Date Submitted:",
         AttributeValue: "${CREATEDDATE}",
         DataType: "date"
-    }, {
-        DisplayText: "Status:",
-        AttributeValue: "${STATUS}",
-        DataType: "string"
     }],
 
     // Set this to true to show "Comments" tab in the info-Popup
