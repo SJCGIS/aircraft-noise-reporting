@@ -55,7 +55,8 @@ dojo.declare("js.config", null, {
     ApplicationIcon: "images/logo.png",
 
     // Set splash window content - Message that appears when the application starts
-    SplashScreenMessage: "<br/><b>Submit Ongoing Issues with Stormwater Utilities in San Juan County WA:</b><br/><br/>Please search for an address or click directly on the map to add an ongoing issue or concern. Then, provide additional detail and click or tap Submit to submit your concerns.</br></br>If you find a request has already been submitted, you can click or tap on the existing issue, provide additional comments and increase the importance of the issue.",
+    SplashScreenMessage: "<br/><b>Submit Ongoing Issues with Stormwater Utilities in San Juan County WA:</b><br/><br/>Please search for an address or click directly on the map to add an ongoing issue or concern. Then, provide additional detail and click or tap Submit to submit your concerns.</br></br>If you find a request has already been submitted, you can click or tap on the existing issue, provide additional comments and increase the importance of the issue.<br /><br /><b>NOTE:</b> This website should NOT be used to report emergency issues. If you have an emergency stormwater issue, please call 360-370-0500.",
+
 
     // Set URL of help page/portal
     HelpURL: "help.htm",
@@ -205,7 +206,7 @@ dojo.declare("js.config", null, {
             DisplayField: "${Match_addr}",
             ZoomLevel: 7,
             AddressMatchScore: 80,
-            LocatorDefaultRequest: "350 Court St",
+            LocatorDefaultRequest: "1201",
             LocatorFieldName: 'Loc_name',
             LocatorFieldValues: ["Address"]
         }, {
@@ -257,7 +258,7 @@ dojo.declare("js.config", null, {
 
     // Set URL for TinyURL service, and URLs for social media
     MapSharingOptions: {
-        TinyURLServiceURL: "http://api.bit.ly/v3/shorten?login=esri&apiKey=R_65fd9891cd882e2a96b99d4bda1be00e&uri=${0}&format=json",
+        TinyURLServiceURL: "https://api-ssl.bitly.com/v3/shorten?access_token=658b4d4ea4dd8f725c859352bdb593a2a4d5c9f6&longUrl=${0}&format=json",
         TinyURLResponseAttribute: "data.url",
         FacebookShareURL: "http://www.facebook.com/sharer.php?u=${0}&t=Citizen%20Service%20Request",
         TwitterShareURL: "http://mobile.twitter.com/compose/tweet?status=Citizen%20Service%20Request ${0}",

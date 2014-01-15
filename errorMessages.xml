@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
  | Version 10.2
  | Copyright 2012 Esri
@@ -18,21 +18,21 @@
 <Messages>
     <addressToLocate>Enter address to locate.</addressToLocate>
     <blankAddress>Enter address to locate.</blankAddress>
-    <serviceToLocate>Enter Request ID to locate.</serviceToLocate>
+    <serviceToLocate>Enter Issue ID to locate.</serviceToLocate>
     <enterComment>Please enter comment.</enterComment>
     <commentsLength>Comment should not exceed 250 characters.</commentsLength>
     <tinyURLEngine>Bitly API is not able to generate tiny URL.</tinyURLEngine>
     <geoLocation>You are currently outside the supported area.</geoLocation>
-    <geolocationTimeout>Request timed out.</geolocationTimeout>
-    <geolocationPositionUnavailable>Position unavailable.</geolocationPositionUnavailable>
-    <geolocationPermissionDenied>Permission denied.</geolocationPermissionDenied>
-    <geolocationUnKnownError>Unknown error.</geolocationUnKnownError>
+    <geolocationTimeout>Sorry, we're not able to locate your position.</geolocationTimeout>
+    <geolocationPositionUnavailable>Sorry, we're not able to locate your position.</geolocationPositionUnavailable>
+    <geolocationPermissionDenied>Sorry, we're not able to locate your position.</geolocationPermissionDenied>
+    <geolocationUnKnownError>Sorry, we're not able to locate your position.</geolocationUnKnownError>
     <noComment>No comment</noComment>
-    <selectRequestType>Please select request type.</selectRequestType>
-    <enterValidEmailId>Please enter valid email ID.</enterValidEmailId>
-    <emailIdLength>Email ID should not exceed 100 characters.</emailIdLength>
-    <enterValidPhone>Phone number should be of 10 digits.</enterValidPhone>
+    <selectRequestType>Please select issue type.</selectRequestType>
+    <enterValidEmailId>Please enter valid email.</enterValidEmailId>
+    <emailIdLength>Email address should not exceed 100 characters.</emailIdLength>
+    <enterValidPhone>Phone number should be 10 digits (ex. 3605551234).</enterValidPhone>
     <nameProvisions>Name accepts alphabets, space, ".", "-".</nameProvisions>
-    <fileSize> Service request '${0}' has been created without attachment because the file size is more then 5MB</fileSize>
+    <fileSize> Issue '${0}' has been created without attachment because the file size is more then 5MB</fileSize>
     <invalidSearch>No results found</invalidSearch>
 </Messages>

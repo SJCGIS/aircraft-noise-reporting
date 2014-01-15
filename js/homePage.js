@@ -256,7 +256,7 @@ function dojoInit() {
         dojo.byId("tdBaseMap").appendChild(imgBasemap);
         dojo.byId("tdBaseMap").className = "tdHeader";
         dojo.byId("divSplashScreenContent").style.width = "350px";
-        dojo.byId("divSplashScreenContent").style.height = "290px";
+        dojo.byId("divSplashScreenContent").style.height = "350px";
         dojo.byId("divAddressContainer").style.display = "block";
         dojo.byId('imgDirections').src = "images/details.png";
         dojo.byId('imgDirections').title = "Details";
