@@ -35,4 +35,5 @@
     <nameProvisions>Name accepts alphabets, space, ".", "-".</nameProvisions>
     <fileSize> Issue '${0}' has been created without attachment because the file size is more then 5MB</fileSize>
     <invalidSearch>No results found</invalidSearch>
+    <successfulSubmit>Your issue has been submitted. Thank you for your input. If we need more information, we may contact you.</successfulSubmit>
 </Messages>

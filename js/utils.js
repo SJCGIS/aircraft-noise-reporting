@@ -946,6 +946,7 @@ function SubmitIssueDetails() {
                         HideProgressIndicator();
                         ResetRequestFields();
                         HideCreateRequestContainer();
+			alert(messages.getElementsByTagName("successfulSubmit")[0].childNodes[0].nodeValue);
                     }, function (err) {
                         HideProgressIndicator();
                         alert(dojo.string.substitute(messages.getElementsByTagName("fileSize")[0].childNodes[0].nodeValue, [addResults[0].objectId]));
@@ -957,6 +958,7 @@ function SubmitIssueDetails() {
                     HideProgressIndicator();
                     ResetRequestFields();
                     HideCreateRequestContainer();
+		    alert(messages.getElementsByTagName("successfulSubmit")[0].childNodes[0].nodeValue);
                 }
                 if (lessthanios6) {
                     if (enablePhotoUploadiOS) {
