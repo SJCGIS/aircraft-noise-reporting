@@ -1,12 +1,11 @@
-# stormwater-issue-reporting
+# aircraft-noise-reporting
 
-Stormwater Issue Reporting is a configuration of ArcGIS Server and a HTML 5 / JavaScript application that allows citizens to help collect information regarding stormwater problems in San Juan County WA.  The information provided will be used for the County stormwater basin planning project.  The purpose of the planning project is to identify areas where the County should build public structures to manage stormwater and where stormwater management is most effectively managed by individuals. It is a single application that can be used by citizens on a desktop PC, mobile phone, or tablet device.
+Aircraft Noise Reporting is a configuration of ArcGIS Server and a HTML 5 / JavaScript application that allows citizens to submit incidents of aircraft noise in San Juan County WA.  The information provided will be collected and passed along to the Naval Air Station on Whidbey Island. This application can be used by citizens on a desktop PC, mobile phone, or tablet device.
 
 ## Features
 
-* Review stormwater issues submitted by others in county
-* Submit new stormwater issues
-* Submit comments or concerns on existing stormwater issues
+* Review aircraft noise incidents submitted by others in county
+* Submit new aircraft noise incidents
 * Share with social media
 
 
@@ -16,7 +15,7 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 
 ## Licensing
 
-Copyright 2013 San Juan County GIS
+Copyright 2014 San Juan County GIS
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
