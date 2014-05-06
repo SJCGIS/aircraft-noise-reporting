@@ -96,14 +96,14 @@ dojo.declare("js.config", null, {
 
     OperationalLayers: {
         //URL used for doing query task on the ServiceRequest layer
-        ServiceRequestLayerURL: "http://isgis1:6080/arcgis/rest/services/PublicInput/Aircraft_Noise/FeatureServer/0",
+        ServiceRequestLayerURL: "http://sjcgis.org/arcgis/rest/services/PublicInput/Aircraft_Noise/FeatureServer/0",
         //Set the primary key attribute for servicerequest
         RequestId: "${REPORTID}",
 
-        ServiceRequestMobileLayerURL: "http://isgis1:6080/arcgis/rest/services/PublicInput/Aircraft_Noise/FeatureServer/0",
+        ServiceRequestMobileLayerURL: "http://sjcgis.org/arcgis/rest/services/PublicInput/Aircraft_Noise/FeatureServer/0",
 
         //URL used for doing query task on the comments layer
-        ServiceRequestCommentsLayerURL: "http://isgis1:6080/arcgis/rest/services/PublicInput/Aircraft_Noise/FeatureServer/1",
+        ServiceRequestCommentsLayerURL: "http://sjcgis.org/arcgis/rest/services/PublicInput/Aircraft_Noise/FeatureServer/1",
         //Set the primary key attribute for the comments
         CommentId: "${REPORTID}"
 
@@ -118,18 +118,17 @@ dojo.declare("js.config", null, {
     InfoWindowHeader: "Report ID: ${REPORTID}",
 
     // Choose content/fields for the info window
-    InfoWindowContent: "${LOUDNESS}",
+    InfoWindowContent: "${Loudness}",
 
     //Define Service request layer name
-    RequestLayerName: "",
+    RequestLayerName: "Loudness",
 
     // ------------------------------------------------------------------------------------------------------------------------
     // INFO-POPUP SETTINGS
     // ------------------------------------------------------------------------------------------------------------------------
     //The labels displayed next to the input boxes when creating a new point, leaving them blank will use the defaults
     InfoWindowCreateTitle: "Noise Report Details",
-    InfoWindowCreateType: "Aircraft Type (if known)",
-    InfoWindowCreateDate: "Incident Date and Time",
+    InfoWindowCreateType: "Aircraft Type",
     InfoWindowCreateLoudness: "Loudness",
     InfoWindowCreateDate: "Date of Incident",
     InfoWindowCreateTime: "Time of Incident",
@@ -143,10 +142,10 @@ dojo.declare("js.config", null, {
     // Set the content to be displayed on the info-Popup. Define labels, field values, field types and field formats
     InfoWindowData: [{
         DisplayText: "Loudness:",
-        AttributeValue: "${LOUDNESS}",
+        AttributeValue: "${Loudness}",
         DataType: "string"
     }, {
-	DisplayText: "Aircraft Type",
+	DisplayText: "Aircraft Type:",
 	AttributeValue: "${AIRCRAFTTYPE}",
 	DataType: "string"
     },{
@@ -160,7 +159,7 @@ dojo.declare("js.config", null, {
     }, {
 	DisplayText: "Time of Incident:",
 	AttributeValue: "${Incident_Time}",
-	DateType: "string"
+	DataType: "string"
     }],
 
     // Set this to true to show "Comments" tab in the info-Popup
@@ -209,7 +208,7 @@ dojo.declare("js.config", null, {
             DisplayText: "Address",
             DefaultValue: "350 Court St",
             LocatorParamaters: ["SingleLine"],
-            LocatorURL: "http://www.sjcgis.org/arcgis/rest/services/Tools/Polaris_Geolocator/GeocodeServer",
+            LocatorURL: "http://sjcgis.org/arcgis/rest/services/Tools/Polaris_Geolocator/GeocodeServer",
             CandidateFields: "Loc_name, Score, Match_addr",
             DisplayField: "${Match_addr}",
             ZoomLevel: 7,
@@ -239,14 +238,14 @@ dojo.declare("js.config", null, {
     ServiceRequestFields: {
         RequestIdFieldName: "REPORTID",
         RequestTypeFieldName: "AIRCRAFTTYPE",
-	RequestLoudnessFieldName: "LOUDNESS",
+	RequestLoudnessFieldName: "Loudness",
         CommentsFieldName: "COMMENTS",
 	IncidentDateFieldName: "Incident_Date",
 	IncidentTimeFieldName: "Incident_Time",
         NameFieldName: "NAME",
         PhoneFieldName: "PHONE",
         EmailFieldName: "EMAIL",
-        StatusFieldName: "STATUS",
+        StatusFieldName: "STATUS"
     },
 
     // Set info-pop fields for adding and displaying comment
@@ -260,7 +259,7 @@ dojo.declare("js.config", null, {
     // ------------------------------------------------------------------------------------------------------------------------
 
     // Set geometry service URL
-    GeometryService: "http://isgis1:6080/arcgis/rest/services/Utilities/Geometry/GeometryServer",
+    GeometryService: "http://sjcgis.org/arcgis/rest/services/Utilities/Geometry/GeometryServer",
 
     // ------------------------------------------------------------------------------------------------------------------------
     // SETTINGS FOR MAP SHARING

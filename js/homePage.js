@@ -83,8 +83,8 @@ function dojoInit() {
     esriConfig.defaults.io.alwaysUseProxy = false;
     esriConfig.defaults.io.timeout = 180000; // milliseconds
     esri.addProxyRule({
-	proxyUrl: "/proxy/proxy.ashx",
-	urlPrefix: "http://isgis1:6080/arcgis/rest/services/PublicInput"
+    	proxyUrl: "/proxy/proxy.ashx",
+    	urlPrefix: "http://sjcgis.org/arcgis/rest/services/PublicInput"
     });
     
     var userAgent = window.navigator.userAgent;
