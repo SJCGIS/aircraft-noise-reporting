@@ -49,13 +49,13 @@ dojo.declare("js.config", null, {
     // GENERAL SETTINGS
     // ------------------------------------------------------------------------------------------------------------------------
     // Set application title
-    ApplicationName: "San Juan County Stormwater Issue Reporting",
+    ApplicationName: "San Juan County Aircraft Noise Reporting",
 
     // Set application icon path
     ApplicationIcon: "images/logo.png",
 
     // Set splash window content - Message that appears when the application starts
-    SplashScreenMessage: "<br/><b>Submit Ongoing Issues with Stormwater Utilities in San Juan County WA:</b><br/><br/>Please search for an address or click directly on the map to add an ongoing issue or concern. Then, provide additional detail and click or tap Submit to submit your concerns.</br></br>If you find a request has already been submitted, you can click or tap on the existing issue, provide additional comments and increase the importance of the issue.<br /><br /><b>NOTE:</b> This website should NOT be used to report emergency issues. If you have an emergency stormwater issue, please call 360-370-0500.",
+    SplashScreenMessage: "<br/><b>Naval Air Station Whidbey Island Aircraft Noise Incidents in San Juan County WA:</b><br/><br/>Please search for an address or click your location directly on the map to add an aircraft incident. Then, provide additional detail and click or tap Submit to submit your incident.</br></br>Incidents received from citizens will be collected over a period of about six months and submitted to Naval Air Station Whidbey Island. Noise complaints can also be sent directly to Naval Air Station Whidbey Island by phone at (360) 257-6665, or via e-mail: comments.NASWI@navy.mil.",
 
 
     // Set URL of help page/portal
@@ -96,16 +96,16 @@ dojo.declare("js.config", null, {
 
     OperationalLayers: {
         //URL used for doing query task on the ServiceRequest layer
-        ServiceRequestLayerURL: "http://www.sjcgis.org/arcgis/rest/services/Stormwater/Stormwater_Issues/FeatureServer/0",
+        ServiceRequestLayerURL: "http://isgis1:6080/arcgis/rest/services/PublicInput/Aircraft_Noise/FeatureServer/0",
         //Set the primary key attribute for servicerequest
-        RequestId: "${STORMWATERID}",
+        RequestId: "${REPORTID}",
 
-        ServiceRequestMobileLayerURL: "http://www.sjcgis.org/arcgis/rest/services/Stormwater/Stormwater_Issues/FeatureServer/0",
+        ServiceRequestMobileLayerURL: "http://isgis1:6080/arcgis/rest/services/PublicInput/Aircraft_Noise/FeatureServer/0",
 
         //URL used for doing query task on the comments layer
-        ServiceRequestCommentsLayerURL: "http://www.sjcgis.org/arcgis/rest/services/Stormwater/Stormwater_Issues/FeatureServer/1",
+        ServiceRequestCommentsLayerURL: "http://isgis1:6080/arcgis/rest/services/PublicInput/Aircraft_Noise/FeatureServer/1",
         //Set the primary key attribute for the comments
-        CommentId: "${STORMWATERID}"
+        CommentId: "${REPORTID}"
 
     },
 
@@ -115,20 +115,24 @@ dojo.declare("js.config", null, {
 
     // Info-window is a small, two line popup that gets displayed on selecting a feature
     // Set Info-window title. Configure this with text/fields
-    InfoWindowHeader: "Issue ID: ${STORMWATERID}",
+    InfoWindowHeader: "Report ID: ${REPORTID}",
 
     // Choose content/fields for the info window
-    InfoWindowContent: "${STORMWATERISSUE}",
+    InfoWindowContent: "${LOUDNESS}",
 
     //Define Service request layer name
-    RequestLayerName: "STORMWATERISSUE",
+    RequestLayerName: "",
 
     // ------------------------------------------------------------------------------------------------------------------------
     // INFO-POPUP SETTINGS
     // ------------------------------------------------------------------------------------------------------------------------
     //The labels displayed next to the input boxes when creating a new point, leaving them blank will use the defaults
-    InfoWindowCreateTitle: "",
-    InfoWindowCreateType: "",
+    InfoWindowCreateTitle: "Noise Report Details",
+    InfoWindowCreateType: "Aircraft Type (if known)",
+    InfoWindowCreateDate: "Incident Date and Time",
+    InfoWindowCreateLoudness: "Loudness",
+    InfoWindowCreateDate: "Date of Incident",
+    InfoWindowCreateTime: "Time of Incident",
     InfoWindowCreateComments: "",
     InfoWindowCreateName: "",
     InfoWindowCreatePhone: "",
@@ -138,24 +142,32 @@ dojo.declare("js.config", null, {
     // Info-popup is a popup dialog that gets displayed on selecting a feature
     // Set the content to be displayed on the info-Popup. Define labels, field values, field types and field formats
     InfoWindowData: [{
-        DisplayText: "Type:",
-        AttributeValue: "${STORMWATERISSUE}",
+        DisplayText: "Loudness:",
+        AttributeValue: "${LOUDNESS}",
         DataType: "string"
     }, {
+	DisplayText: "Aircraft Type",
+	AttributeValue: "${AIRCRAFTTYPE}",
+	DataType: "string"
+    },{
         DisplayText: "Comment:",
         AttributeValue: "${COMMENTS}",
         DataType: "string"
     }, {
-        DisplayText: "Date Submitted:",
-        AttributeValue: "${CREATEDDATE}",
-        DataType: "date"
+        DisplayText: "Date of Incident:",
+        AttributeValue: "${Incident_Date}",
+        DataType: "string"
+    }, {
+	DisplayText: "Time of Incident:",
+	AttributeValue: "${Incident_Time}",
+	DateType: "string"
     }],
 
     // Set this to true to show "Comments" tab in the info-Popup
-    ShowCommentsTab: true,
+    ShowCommentsTab: false,
 
     // Set this to true to show the Attach portion of the info-popup
-    AllowAttachments: true,
+    AllowAttachments: false,
 
     // Set size of the info-Popup - select maximum height and width in pixels (not applicable for tabbed info-Popup)
     //minimum height should be 270 for the info-popup in pixels
@@ -206,10 +218,10 @@ dojo.declare("js.config", null, {
             LocatorFieldName: 'Loc_name',
             LocatorFieldValues: ["Address"]
         }, {
-            DisplayText: "Issue ID",
+            DisplayText: "Report ID",
             DefaultValue: "111555",
-            QueryString: "STORMWATERID LIKE '${0}%'",
-            DisplayField: "${STORMWATERID}"
+            QueryString: "REPORTID LIKE '${0}%'",
+            DisplayField: "${REPORTID}"
         }]
     },
 
@@ -217,7 +229,7 @@ dojo.declare("js.config", null, {
     // Note: DateFieldName refers to a date database field.
     // All other attributes refer to text database fields.
     DatabaseFields: {
-        RequestIdFieldName: "STORMWATERID",
+        RequestIdFieldName: "REPORTID",
         CommentsFieldName: "COMMENTS",
         DateFieldName: "SUBMITDT",
         RankFieldName: "RANK"
@@ -225,14 +237,16 @@ dojo.declare("js.config", null, {
 
     //Define service request input fields for submitting a new request
     ServiceRequestFields: {
-        RequestIdFieldName: "STORMWATERID",
-        RequestTypeFieldName: "STORMWATERISSUE",
+        RequestIdFieldName: "REPORTID",
+        RequestTypeFieldName: "AIRCRAFTTYPE",
+	RequestLoudnessFieldName: "LOUDNESS",
         CommentsFieldName: "COMMENTS",
+	IncidentDateFieldName: "Incident_Date",
+	IncidentTimeFieldName: "Incident_Time",
         NameFieldName: "NAME",
         PhoneFieldName: "PHONE",
         EmailFieldName: "EMAIL",
         StatusFieldName: "STATUS",
-        RequestDateFieldName: "CREATEDDATE"
     },
 
     // Set info-pop fields for adding and displaying comment
@@ -246,7 +260,7 @@ dojo.declare("js.config", null, {
     // ------------------------------------------------------------------------------------------------------------------------
 
     // Set geometry service URL
-    GeometryService: "http://www.sjcgis.org/arcgis/rest/services/Utilities/Geometry/GeometryServer",
+    GeometryService: "http://isgis1:6080/arcgis/rest/services/Utilities/Geometry/GeometryServer",
 
     // ------------------------------------------------------------------------------------------------------------------------
     // SETTINGS FOR MAP SHARING
@@ -262,8 +276,9 @@ dojo.declare("js.config", null, {
     },
 
     // set this flag to true to enable uploading images into iOS devices (uses 3rd party application to upload pictures)
-    EnablePhotoUploadiOS: true,
+    EnablePhotoUploadiOS: false,
     //Message displayed for 3rd party software. This is a HTML text
     PhotoUploadText: "Add attachment <hr/> <br/>This application uses \"Picup\" to add photos. You can download it from <a href='http://picupapp.com/' target='_blank'>PickupApp.com</a>"
 
 });
+

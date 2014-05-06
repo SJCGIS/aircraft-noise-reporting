@@ -41,6 +41,9 @@ function ResetRequestFields() {
     dojo.byId('fileUploadControl').outerHTML = dojo.byId('fileUploadControl').outerHTML;
     dojo.byId("txtSelectedRequest").value = "";
     dojo.byId('txtDescription').value = "";
+    dojo.byId('txtType').value = "";
+    dojo.byId('incident_date').value = "";
+    dojo.byId('incident_time').value = "";
     dojo.byId('txtName').value = "";
     dojo.byId('txtPhone').value = "";
     dojo.byId('txtMail').value = "";
@@ -922,13 +925,15 @@ function SubmitIssueDetails() {
     var mapPoint = map.getLayer(tempGraphicsLayerId).graphics[0].geometry;
     var date = new js.date();
     var serviceRequestAttributes = {};
-    serviceRequestAttributes[serviceRequestFields.RequestTypeFieldName] = dojo.byId("txtSelectedRequest").value;
+    serviceRequestAttributes[serviceRequestFields.RequestTypeFieldName] = dojo.byId("txtType").value.trim();
+    serviceRequestAttributes[serviceRequestFields.RequestLoudnessFieldName] = dojo.byId("txtSelectedRequest").value;
     serviceRequestAttributes[serviceRequestFields.CommentsFieldName] = dojo.byId('txtDescription').value.trim();
     serviceRequestAttributes[serviceRequestFields.NameFieldName] = dojo.byId('txtName').value.trim();
     serviceRequestAttributes[serviceRequestFields.PhoneFieldName] = dojo.byId('txtPhone').value;
     serviceRequestAttributes[serviceRequestFields.EmailFieldName] = dojo.byId('txtMail').value.trim();
     serviceRequestAttributes[serviceRequestFields.StatusFieldName] = "Unassigned";
-    serviceRequestAttributes[serviceRequestFields.RequestDateFieldName] = date.utcMsFromTimestamp(date.localToUtc(date.localTimestampNow()));
+    serviceRequestAttributes[serviceRequestFields.IncidentDateFieldName] = dojo.byId('incident_date').value.trim();
+    serviceRequestAttributes[serviceRequestFields.IncidentTimeFieldName] = dojo.byId('incident_time').value.trim();
 
     var serviceRequestGraphic = new esri.Graphic(mapPoint, null, serviceRequestAttributes, null);
     map.getLayer(serviceRequestLayerId).applyEdits([serviceRequestGraphic], null, null, function (addResults) {
@@ -978,13 +983,13 @@ function SubmitIssueDetails() {
 
             }, function (err) {
                 HideProgressIndicator();
-                ShowSpanErrorMessage("spanServiceErrorMessage", "Unable to create issue.");
+                ShowSpanErrorMessage("spanServiceErrorMessage", "Unable to create report.");
 
             });
         }
     }, function (err) {
         HideProgressIndicator();
-        ShowSpanErrorMessage("spanServiceErrorMessage", "Unable to create issue.");
+        ShowSpanErrorMessage("spanServiceErrorMessage", "Unable to create report.");
     });
 }
 

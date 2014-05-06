@@ -34,7 +34,6 @@ var isAndroidDevice = false; //This variable is set to true when the app is runn
 var operationalLayers; //variable to store operational layers
 var isTablet = false; //This variable is set to true when the app is running on tablets
 var baseMapLayers; //Variable for storing base map layers
-var referenceOverlays;
 var showNullValueAs; //variable to store the default value for replacing null values
 var mapSharingOptions; //variable for storing the tiny service URL
 var geometryService; //variable to store the Geometry service
@@ -81,10 +80,13 @@ var databaseFields;
 
 //This initialization function is called when the DOM elements are ready
 function dojoInit() {
-    esri.config.defaults.io.proxyUrl = "proxy.ashx"; //relative path
     esriConfig.defaults.io.alwaysUseProxy = false;
     esriConfig.defaults.io.timeout = 180000; // milliseconds
-
+    esri.addProxyRule({
+	proxyUrl: "/proxy/proxy.ashx",
+	urlPrefix: "http://isgis1:6080/arcgis/rest/services/PublicInput"
+    });
+    
     var userAgent = window.navigator.userAgent;
     if (userAgent.indexOf("iPhone") >= 0 || userAgent.indexOf("iPad") >= 0) {
         isiOS = true;
@@ -223,7 +225,6 @@ function dojoInit() {
 
     mapSharingOptions = responseObject.MapSharingOptions;
     baseMapLayers = responseObject.BaseMapLayers;
-    referenceOverlays = responseObject.ReferenceOverlays
     var infoWindow = new js.InfoWindow({
         domNode: dojo.create("div", null, dojo.byId("map"))
     });
@@ -251,7 +252,7 @@ function dojoInit() {
         imgBasemap.style.cursor = "pointer";
         imgBasemap.onclick = function () {
             ShowBaseMaps();
-        }
+        };
 
         dojo.byId("tdBaseMap").appendChild(imgBasemap);
         dojo.byId("tdBaseMap").className = "tdHeader";
@@ -301,6 +302,24 @@ function dojoInit() {
         if (responseObject.InfoWindowCreateType != "") {
             dojo.byId("createPopUpType").innerText = responseObject.InfoWindowCreateType;
         }
+    }
+
+    if (responseObject.InfoWindowCreateLoudness != null) {
+	if (responseObject.InfoWindowCreateLoudness != "") {
+	    dojo.byId("createPopUpLoudness").innerText = responseObject.InfoWindowCreateLoudness;
+	}
+    }
+
+    if (responseObject.InfoWindowCreateDate != null) {
+	if (responseObject.InfoWindowCreateDate != "") {
+	    dojo.byId("createPopUpDate").innerText = responseObject.InfoWindowCreateDate;
+	}
+    }
+
+    if (responseObject.InfoWindowCreateTime != null) {
+	if (responseObject.InfoWindowCreateTime != "") {
+	    dojo.byId("createPopUpTime").innerText = responseObject.InfoWindowCreateTime;
+	}
     }
 
     if (responseObject.InfoWindowCreateName != null) {
@@ -380,7 +399,6 @@ function dojoInit() {
     });
 
     CreateBaseMapComponent();
-    AddReferenceOverlays();
     if (!allowAttachments) {
         dojo.byId('trFileUpload').style.display = "none";
     }
@@ -515,8 +533,7 @@ function initializeMap() {
                 }, timeout);
             }
         }
-    }
-
+    };
 }
 
 
