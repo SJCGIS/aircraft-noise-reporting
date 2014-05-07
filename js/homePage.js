@@ -200,7 +200,6 @@ function dojoInit() {
     lastSearchString = dojo.byId("txtAddress").value.trim();
 
     dojo.byId("txtAddress").setAttribute("defaultAddressTitle", responseObject.LocatorSettings.Locators[0].DefaultValue);
-    dojo.byId("txtAddress").style.color = "gray";
     dojo.byId("txtAddress").setAttribute("defaultRequestName", responseObject.LocatorSettings.Locators[0].LocatorDefaultRequest);
     dojo.byId("txtAddress").setAttribute("defaultRequestTitle", responseObject.LocatorSettings.Locators[0].LocatorDefaultRequest);
 

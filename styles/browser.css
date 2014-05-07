@@ -76,7 +76,7 @@ body, html
     top: 60px;
     right: 15px;
     width: 300px;
-    background-color: #585858;
+    background-color: #5fb4d9;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     border-radius: 8px;
@@ -125,8 +125,8 @@ body, html
 {
     width: 260px;
     height: 115px;
-    background: rgba(0,0,0,0.9);
-    -pie-background: rgba(0,0,0,0.9);
+    background: rgba(50,151,191,0.9);
+    -pie-background: rgba(50,151,191,0.9);
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;

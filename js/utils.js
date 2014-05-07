@@ -1189,7 +1189,6 @@ function ResizeHandler() {
 //Show address container
 function ShowLocateContainer() {
     dojo.byId('txtAddress').blur();
-    dojo.byId('txtAddress').style.color = "gray";
     HideBaseMapLayerContainer();
     HideShareAppContainer();
     if (isMobileDevice) {
@@ -1224,7 +1223,6 @@ function ResetSearchContainer() {
     } else {
         dojo.byId("txtAddress").value = dojo.byId("txtAddress").getAttribute("defaultRequestName");
     }
-    dojo.byId("txtAddress").style.color = "gray";
     dojo.byId("imgSearchLoader").style.display == "none";
     lastSearchString = dojo.byId("txtAddress").value.trim();
 }
@@ -1590,11 +1588,6 @@ function ShowAddressSearchView() {
     if (dojo.byId("imgSearchLoader").style.display == "block") {
         return;
     }
-    if (dojo.byId("txtAddress").getAttribute("defaultAddress") == dojo.byId("txtAddress").getAttribute("defaultAddressTitle")) {
-        dojo.byId("txtAddress").style.color = "gray";
-    } else {
-        dojo.byId("txtAddress").style.color = "gray";
-    }
     dojo.byId("txtAddress").value = dojo.byId("txtAddress").getAttribute("defaultAddress");
     lastSearchString = dojo.byId("txtAddress").value.trim();
     dojo.empty(dojo.byId('tblAddressResults'));
@@ -1607,11 +1600,6 @@ function ShowAddressSearchView() {
 function ShowRequestSearchView() {
     if (dojo.byId("imgSearchLoader").style.display == "block") {
         return;
-    }
-    if (dojo.byId("txtAddress").getAttribute("defaultRequestName") == dojo.byId("txtAddress").getAttribute("defaultRequestTitle")) {
-        dojo.byId("txtAddress").style.color = "gray";
-    } else {
-        dojo.byId("txtAddress").style.color = "gray";
     }
     dojo.byId("txtAddress").value = dojo.byId("txtAddress").getAttribute("defaultRequestName");
     lastSearchString = dojo.byId("txtAddress").value.trim();
