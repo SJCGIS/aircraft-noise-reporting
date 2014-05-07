@@ -55,7 +55,7 @@ dojo.declare("js.config", null, {
     ApplicationIcon: "images/logo.png",
 
     // Set splash window content - Message that appears when the application starts
-    SplashScreenMessage: "<br/><b>Naval Air Station Whidbey Island Aircraft Noise Incidents in San Juan County WA:</b><br/><br/>Please search for an address or click your location directly on the map to add an aircraft incident. Then, provide additional detail and click or tap Submit to submit your incident.</br></br>Incidents received from citizens will be collected over a period of about six months and submitted to Naval Air Station Whidbey Island. Noise complaints can also be sent directly to Naval Air Station Whidbey Island by phone at (360) 257-6665, or via e-mail: comments.NASWI@navy.mil.",
+    SplashScreenMessage: "<br/><b>Report Whidbey Island Naval Air Station Aircraft Noise Incidents in San Juan County WA:</b><br/><br/>Please search for an address or click your location directly on the map to add an aircraft incident. Then, provide additional detail and click or tap Submit to submit your incident.</br></br>Incidents received from citizens will be collected by the County of San Juan over a period of about six months and submitted to <a href='http://cnic.navy.mil/regions/cnrnw/installations/nas_whidbey_island.html'>Naval Air Station Whidbey Island</a>. Noise complaints can also be sent directly to Naval Air Station Whidbey Island by phone at (360) 257-6665, or via e-mail: comments.NASWI@navy.mil.",
 
 
     // Set URL of help page/portal
