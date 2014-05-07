@@ -269,8 +269,8 @@ dojo.declare("js.config", null, {
     MapSharingOptions: {
         TinyURLServiceURL: "https://api-ssl.bitly.com/v3/shorten?access_token=658b4d4ea4dd8f725c859352bdb593a2a4d5c9f6&longUrl=${0}&format=json",
         TinyURLResponseAttribute: "data.url",
-        FacebookShareURL: "http://www.facebook.com/sharer.php?u=${0}&t=Citizen%20Service%20Request",
-        TwitterShareURL: "http://mobile.twitter.com/compose/tweet?status=Citizen%20Service%20Request ${0}",
+        FacebookShareURL: "http://www.facebook.com/sharer.php?u=${0}&t=Aircraft%20Noise%20Reporting",
+        TwitterShareURL: "http://mobile.twitter.com/compose/tweet?status=Aircraft%20Noise%20Reporting ${0}",
         ShareByMailLink: "mailto:%20?subject=Check%20out%20this%20map!&body=${0}"
     },
 
