@@ -18,7 +18,7 @@
 <Messages>
     <addressToLocate>Enter address to locate.</addressToLocate>
     <blankAddress>Enter address to locate.</blankAddress>
-    <serviceToLocate>Enter Issue ID to locate.</serviceToLocate>
+    <serviceToLocate>Enter Incident Report ID to locate.</serviceToLocate>
     <enterComment>Please enter comment.</enterComment>
     <commentsLength>Comment should not exceed 250 characters.</commentsLength>
     <tinyURLEngine>Bitly API is not able to generate tiny URL.</tinyURLEngine>
@@ -28,12 +28,12 @@
     <geolocationPermissionDenied>Sorry, we're not able to locate your position.</geolocationPermissionDenied>
     <geolocationUnKnownError>Sorry, we're not able to locate your position.</geolocationUnKnownError>
     <noComment>No comment</noComment>
-    <selectRequestType>Please select issue type.</selectRequestType>
+    <selectRequestType>Please select loudness.</selectRequestType>
     <enterValidEmailId>Please enter valid email.</enterValidEmailId>
     <emailIdLength>Email address should not exceed 100 characters.</emailIdLength>
     <enterValidPhone>Phone number should be 10 digits (ex. 3605551234).</enterValidPhone>
     <nameProvisions>Name accepts alphabets, space, ".", "-".</nameProvisions>
-    <fileSize> Issue '${0}' has been created without attachment because the file size is more then 5MB</fileSize>
+    <fileSize> Incident Report '${0}' has been created without attachment because the file size is more then 5MB</fileSize>
     <invalidSearch>No results found</invalidSearch>
-    <successfulSubmit>Your issue has been submitted. Thank you for your input. If we need more information, we may contact you.</successfulSubmit>
+    <successfulSubmit>Your incident report has been submitted. Thank you for your input. If we need more information, we may contact you.</successfulSubmit>
 </Messages>

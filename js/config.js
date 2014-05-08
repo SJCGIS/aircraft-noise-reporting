@@ -115,7 +115,7 @@ dojo.declare("js.config", null, {
 
     // Info-window is a small, two line popup that gets displayed on selecting a feature
     // Set Info-window title. Configure this with text/fields
-    InfoWindowHeader: "Report ID: ${REPORTID}",
+    InfoWindowHeader: "Noise Incident Report",
 
     // Choose content/fields for the info window
     InfoWindowContent: "${Loudness}",
@@ -141,6 +141,10 @@ dojo.declare("js.config", null, {
     // Info-popup is a popup dialog that gets displayed on selecting a feature
     // Set the content to be displayed on the info-Popup. Define labels, field values, field types and field formats
     InfoWindowData: [{
+	DisplayText: "Incident Report ID:",
+	AttributeValue: "${REPORTID}",
+	DataType: "string"
+    }, {
         DisplayText: "Loudness:",
         AttributeValue: "${Loudness}",
         DataType: "string"
@@ -170,10 +174,10 @@ dojo.declare("js.config", null, {
 
     // Set size of the info-Popup - select maximum height and width in pixels (not applicable for tabbed info-Popup)
     //minimum height should be 270 for the info-popup in pixels
-    InfoPopupHeight: 310,
+    InfoPopupHeight: 360,
 
     //minimum width should be 330 for the info-popup in pixels
-    InfoPopupWidth: 330,
+    InfoPopupWidth: 350,
 
     // Set string value to be shown for null or blank values
     ShowNullValueAs: "N/A",
