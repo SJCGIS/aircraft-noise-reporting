@@ -320,26 +320,19 @@
                                     </tr>
 				    <tr class="trRowStyle" id="trRowStyle">
 				      <td id="createPopUpDate" style="padding-top: 2px;" valign="top" align="left">
-					Date of Incident:
+					Date/Time:
 				      </td>
 				      <td align="left">
-					<input type="text" name="incident_date" id="incident_date" class="txtBox" type="date" />
+					<input type="text" name="incident_date" id="incident_date" class="txtDate" type="date" />
+					<input type="text" name="incident_time" id="incident_time" class="txtTime" type="time" />
 				      </td>
 				    </tr>
-				    <tr class="trRowStyle">
-				      <td id="createPopUpTime" style="padding-top: 2px;" valign="top" align="left">
-					Time of Incident:
-				      </td>
-				      <td align="left">
-					<input type="text" name="incident_time" id="incident_time" class="txtBox" type="time" />
-				      </td>
-				    </tr>				    
                                     <tr class="trTextAreaRowStyle">
                                         <td id="createPopUpComments" style="padding-top: 2px;" valign="top" align="left">
-                                            Comment:
+                                            Comments:
                                         </td>
                                         <td align="left">
-                                            <textarea placeholder="Enter comment" valign="middle" maxlength="250" id="txtDescription"
+                                            <textarea placeholder="Enter comments (e.g. Did you see the aircraft, altitude, etc)" valign="middle" maxlength="250" id="txtDescription"
                                                 class="txtDescription" onkeypress="if(dojo.isIE){return ImposeMaxLength(this, 249);}else{return ImposeMaxLength(this, 250);}"></textarea>
                                         </td>
                                     </tr>
@@ -356,7 +349,7 @@
                                             Name:
                                         </td>
                                         <td align="left">
-                                            <input placeholder="Enter name" valign="middle" maxlength="150" type="text" id="txtName"
+                                            <input placeholder="Enter your name" valign="middle" maxlength="150" type="text" id="txtName"
 						   class="txtBox" />
                                         </td>
                                     </tr>
@@ -365,7 +358,7 @@
                                             Phone:
                                         </td>
                                         <td align="left">
-                                            <input placeholder="Enter phone number" valign="middle" type="tel" id="txtPhone"
+                                            <input placeholder="Enter contact phone number" valign="middle" type="tel" id="txtPhone"
                                                 class="txtBox" />
                                         </td>
                                     </tr>
@@ -374,7 +367,7 @@
                                             Email:
                                         </td>
                                         <td align="left">
-                                            <input placeholder="Enter email address" valign="middle" type="email" id="txtMail"
+                                            <input placeholder="Enter contact email address" valign="middle" type="email" id="txtMail"
                                                 class="txtBox" />
                                         </td>
                                     </tr>

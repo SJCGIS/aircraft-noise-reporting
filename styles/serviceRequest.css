@@ -709,6 +709,21 @@ DIV.fileUploadContainer INPUT
     border: 0px !important;
 }
 
+.txtDate, .txtTime {
+    border: none !important;
+    outline: none;
+    padding: 0px !important;
+    margin-left: 4px;
+    vertical-align: middle;
+    background-color: #3c97bf;
+    color: #fff;
+    font-family: Verdana !important;
+    width: 100px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
 .txtBox, .txtDescription, .txtFileName
 {
     border: none !important;

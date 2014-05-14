@@ -32,7 +32,7 @@
 /* Styles for body*/
 body, html
 {
-    font-size: 11px !important;
+    font-size: 12px !important;
 }
 
 /*---------------------------------------------------------------------------------------------------------*/
@@ -90,7 +90,7 @@ body, html
 .txtAddress
 {
     height: 30px !important;
-    font-size: 11px !important;
+    font-size: 12px !important;
     line-height: 30px;
 }
 
@@ -209,7 +209,7 @@ body, html
 
 .txtArea
 {
-    font-size: 11px !important;
+    font-size: 12px !important;
     width: 295px;
     height: 70px;
     line-height: 22px;
@@ -230,7 +230,7 @@ body, html
 {
     height: 25px !important;
     line-height: 23px !important;
-    font-size: 11px !important;
+    font-size: 12px !important;
 }
 
 .tdAttach
@@ -246,13 +246,13 @@ body, html
 
 .txtSelectedRequest
 {
-    font-size: 11px;
+    font-size: 12px;
     height: 25px !important;
 }
 
 .txtDescription, .divRequestTypes
 {
-    font-size: 11px !important;
+    font-size: 12px !important;
 }
 
 .divRequestTypes

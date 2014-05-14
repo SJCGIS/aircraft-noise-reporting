@@ -114,7 +114,7 @@ function dojoInit() {
     } else {
         isBrowser = true;
         dojo.byId('dynamicStyleSheet').href = "styles/browser.css";
-        dojo.byId('divSplashContent').style.fontSize = "11px";
+        dojo.byId('divSplashContent').style.fontSize = "12px";
 
     }
     if (lessthanios6) {
@@ -312,12 +312,6 @@ function dojoInit() {
     if (responseObject.InfoWindowCreateDate != null) {
 	if (responseObject.InfoWindowCreateDate != "") {
 	    dojo.byId("createPopUpDate").innerText = responseObject.InfoWindowCreateDate;
-	}
-    }
-
-    if (responseObject.InfoWindowCreateTime != null) {
-	if (responseObject.InfoWindowCreateTime != "") {
-	    dojo.byId("createPopUpTime").innerText = responseObject.InfoWindowCreateTime;
 	}
     }
 
