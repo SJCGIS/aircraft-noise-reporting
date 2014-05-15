@@ -55,7 +55,7 @@ dojo.declare("js.config", null, {
     ApplicationIcon: "images/logo.png",
 
     // Set splash window content - Message that appears when the application starts
-    SplashScreenMessage: "<br/><b>Report Whidbey Island Naval Air Station Jet Aircraft Noise Incidents in San Juan County WA:</b><br/><br/><img class='imgThumbnail' src='images/locate.png'><strong>Search</strong> for an address <em>-or-</em> <br/> <img class='imgThumbnail' src='images/gps.png'><strong>Locate</strong> your position on the map. <br/><br/>Then click your location directly on the map to add an aircraft incident. Then, provide additional detail and click or tap Submit to submit your incident.</br></br>Incidents received from citizens will be collected by the County of San Juan over a period of about six months and submitted to <a href='http://cnic.navy.mil/regions/cnrnw/installations/nas_whidbey_island.html'>Naval Air Station Whidbey Island</a>. Noise complaints can also be sent directly to Naval Air Station Whidbey Island by phone at (360) 257-6665, or via e-mail: comments.NASWI@navy.mil.",
+    SplashScreenMessage: "<br/><b>Report Whidbey Island Naval Air Station Jet Aircraft Noise Incidents in San Juan County WA:</b><br/><br/><img class='imgThumbnail' src='images/locate.png'><strong>Search</strong> for an address <em>-or-</em> <br/> <img class='imgThumbnail' src='images/gps.png'><strong>Locate</strong> your position on the map. <br/><br/>Then click your location directly on the map to add an aircraft incident. Provide additional details and click or tap Submit to submit your incident.</br></br>Incidents received from citizens will be collected by the County of San Juan over a period of about six months and submitted to <a href='http://cnic.navy.mil/regions/cnrnw/installations/nas_whidbey_island.html'>Naval Air Station Whidbey Island</a>. Noise complaints can also be sent directly to Naval Air Station Whidbey Island by phone at (360) 257-6665, or via e-mail: comments.NASWI@navy.mil.",
 
 
     // Set URL of help page/portal
@@ -273,9 +273,9 @@ dojo.declare("js.config", null, {
     MapSharingOptions: {
         TinyURLServiceURL: "https://api-ssl.bitly.com/v3/shorten?access_token=658b4d4ea4dd8f725c859352bdb593a2a4d5c9f6&longUrl=${0}&format=json",
         TinyURLResponseAttribute: "data.url",
-        FacebookShareURL: "http://www.facebook.com/sharer.php?u=${0}&t=Aircraft%20Noise%20Reporting",
-        TwitterShareURL: "http://mobile.twitter.com/compose/tweet?status=Aircraft%20Noise%20Reporting ${0}",
-        ShareByMailLink: "mailto:%20?subject=Check%20out%20this%20map!&body=${0}"
+        FacebookShareURL: "http://www.facebook.com/sharer.php?u=${0}&t=Jet%20Aircraft%20Noise%20Reporting",
+        TwitterShareURL: "http://mobile.twitter.com/compose/tweet?status=Jet%20Aircraft%20Noise%20Reporting ${0}",
+        ShareByMailLink: "mailto:%20?subject=Jet%20Aircraft%20Noise%20Reporting&body=${0}"
     },
 
     // set this flag to true to enable uploading images into iOS devices (uses 3rd party application to upload pictures)
