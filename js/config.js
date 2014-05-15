@@ -49,13 +49,13 @@ dojo.declare("js.config", null, {
     // GENERAL SETTINGS
     // ------------------------------------------------------------------------------------------------------------------------
     // Set application title
-    ApplicationName: "San Juan County Aircraft Noise Reporting",
+    ApplicationName: "San Juan County Jet Aircraft Noise Reporting",
 
     // Set application icon path
     ApplicationIcon: "images/logo.png",
 
     // Set splash window content - Message that appears when the application starts
-    SplashScreenMessage: "<br/><b>Report Whidbey Island Naval Air Station Aircraft Noise Incidents in San Juan County WA:</b><br/><br/>Please search for an address or click your location directly on the map to add an aircraft incident. Then, provide additional detail and click or tap Submit to submit your incident.</br></br>Incidents received from citizens will be collected by the County of San Juan over a period of about six months and submitted to <a href='http://cnic.navy.mil/regions/cnrnw/installations/nas_whidbey_island.html'>Naval Air Station Whidbey Island</a>. Noise complaints can also be sent directly to Naval Air Station Whidbey Island by phone at (360) 257-6665, or via e-mail: comments.NASWI@navy.mil.",
+    SplashScreenMessage: "<br/><b>Report Whidbey Island Naval Air Station Jet Aircraft Noise Incidents in San Juan County WA:</b><br/><br/><img class='imgThumbnail' src='images/locate.png'><strong>Search</strong> for an address <em>-or-</em> <br/> <img class='imgThumbnail' src='images/gps.png'><strong>Locate</strong> your position on the map. <br/><br/>Then click your location directly on the map to add an aircraft incident. Then, provide additional detail and click or tap Submit to submit your incident.</br></br>Incidents received from citizens will be collected by the County of San Juan over a period of about six months and submitted to <a href='http://cnic.navy.mil/regions/cnrnw/installations/nas_whidbey_island.html'>Naval Air Station Whidbey Island</a>. Noise complaints can also be sent directly to Naval Air Station Whidbey Island by phone at (360) 257-6665, or via e-mail: comments.NASWI@navy.mil.",
 
 
     // Set URL of help page/portal
@@ -130,8 +130,8 @@ dojo.declare("js.config", null, {
     InfoWindowCreateTitle: "Noise Report Details",
     InfoWindowCreateType: "Aircraft Type",
     InfoWindowCreateLoudness: "Loudness",
-    InfoWindowCreateDate: "Date of Incident",
-    InfoWindowCreateTime: "Time of Incident",
+    InfoWindowCreateDate: "Date",
+    InfoWindowCreateTime: "Time",
     InfoWindowCreateComments: "",
     InfoWindowCreateName: "",
     InfoWindowCreatePhone: "",
@@ -157,11 +157,11 @@ dojo.declare("js.config", null, {
         AttributeValue: "${COMMENTS}",
         DataType: "string"
     }, {
-        DisplayText: "Date of Incident:",
+        DisplayText: "Date:",
         AttributeValue: "${Incident_Date}",
         DataType: "string"
     }, {
-	DisplayText: "Time of Incident:",
+	DisplayText: "Time:",
 	AttributeValue: "${Incident_Time}",
 	DataType: "string"
     }],

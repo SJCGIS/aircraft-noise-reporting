@@ -1,6 +1,6 @@
 # aircraft-noise-reporting
 
-Aircraft Noise Reporting is a configuration of ArcGIS Server and a HTML 5 / JavaScript application that allows citizens to submit incidents of aircraft noise in San Juan County WA.  The information provided will be collected and passed along to the Naval Air Station on Whidbey Island. This application can be used by citizens on a desktop PC, mobile phone, or tablet device.
+Jet Aircraft Noise Reporting is a configuration of ArcGIS Server and a HTML 5 / JavaScript application that allows citizens to submit incidents of aircraft noise in San Juan County WA.  The information provided will be collected and passed along to the Naval Air Station on Whidbey Island. This application can be used by citizens on a desktop PC, mobile phone, or tablet device.
 
 ## Features
 

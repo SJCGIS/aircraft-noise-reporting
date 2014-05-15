@@ -40,7 +40,7 @@ body, html
 
 .customButton
 {
-    height: 25px !important;
+    height: 28px !important;
 }
 
 .imgOptions
@@ -51,6 +51,13 @@ body, html
     padding: 0px 5px 0px 0px;
     cursor: pointer;
 }
+
+.imgThumbnail {
+    height: 30px !important;
+    width: 30px !important;
+    padding: 0px 5px 0px 0px;
+}
+
 
 .imgShare
 {
@@ -156,7 +163,7 @@ body, html
 
 .imgDropdownCarot
 {
-    height: 25px !important;
+    height: 28px !important;
     right: 2px;
 }
 
@@ -222,13 +229,13 @@ body, html
 
 .divDropDownContainer, .divDropdown
 {
-    height: 25px !important;
+    height: 28px !important;
     width: 235px !important;
 }
 
 .txtBox, .txtFileName
 {
-    height: 25px !important;
+    height: 28px !important;
     line-height: 23px !important;
     font-size: 12px !important;
 }
@@ -247,11 +254,17 @@ body, html
 .txtSelectedRequest
 {
     font-size: 12px;
-    height: 25px !important;
+    height: 28px !important;
 }
 
 .txtDescription, .divRequestTypes
 {
+    font-size: 12px !important;
+}
+
+.txtDate, .txtTime {
+    height: 28px !important;
+    line-height: 23px !important;
     font-size: 12px !important;
 }
 
