@@ -364,7 +364,8 @@ function dojoInit() {
     databaseFields = responseObject.DatabaseFields;
     map = new esri.Map("map", {
         slider: true,
-        infoWindow: infoWindow
+        infoWindow: infoWindow,
+	maxScale: 600
     });
     dojo.connect(map, "onClick", function (evt) {
         map.infoWindow.hide();
