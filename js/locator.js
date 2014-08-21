@@ -189,7 +189,7 @@ function LocateAddressOnMap(mapPoint) {
     }
     if (mapPoint) {
         var ext = GetExtent(mapPoint);
-        map.setExtent(ext.getExtent().expand(15));
+        map.setExtent(ext.getExtent().expand(20));
         var graphic = new esri.Graphic(mapPoint, locatorMarkupSymbol, {
             "Locator": true
         }, null);
@@ -494,7 +494,7 @@ function ShowMyLocation() {
             }
             mapPoint = newPointCollection[0].getPoint(0);
             var ext = GetExtent(mapPoint);
-            map.setExtent(ext.getExtent().expand(15));
+            map.setExtent(ext.getExtent().expand(20));
             var graphic = new esri.Graphic(mapPoint, locatorMarkupSymbol, {
                 "Locator": true
             }, null);
