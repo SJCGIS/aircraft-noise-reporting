@@ -15,6 +15,7 @@
  | limitations under the License.
  */
 dojo.require("dojo.window");
+dojo.require("dojo.date");
 dojo.require("dojo.date.locale");
 dojo.require("dojox.mobile.View");
 dojo.require("esri.map");
@@ -22,6 +23,7 @@ dojo.require("esri.tasks.geometry");
 dojo.require("esri.tasks.locator");
 dojo.require("esri.tasks.query");
 dojo.require("esri.layers.FeatureLayer");
+dojo.require("esri.TimeExtent");
 dojo.require("js.config");
 dojo.require("js.date");
 dojo.require("js.InfoWindow");
@@ -256,7 +258,7 @@ function dojoInit() {
         dojo.byId("tdBaseMap").appendChild(imgBasemap);
         dojo.byId("tdBaseMap").className = "tdHeader";
         dojo.byId("divSplashScreenContent").style.width = "400px";
-        dojo.byId("divSplashScreenContent").style.height = "400px";
+        dojo.byId("divSplashScreenContent").style.height = "450px";
         dojo.byId("divAddressContainer").style.display = "block";
         dojo.byId('imgDirections').src = "images/details.png";
         dojo.byId('imgDirections').title = "Details";
@@ -443,12 +445,17 @@ function initializeMap() {
     var gLayer = new esri.layers.GraphicsLayer();
     gLayer.id = highlightPollLayerId;
     map.addLayer(gLayer);
+    var timeExtent = new esri.TimeExtent();
+    var now = new Date();
+    timeExtent.endTime = now;
+    timeExtent.startTime = dojo.date.add(timeExtent.endTime, "month", -1);
     var serviceRequestLayer = new esri.layers.FeatureLayer(isBrowser ? operationalLayers.ServiceRequestLayerURL : operationalLayers.ServiceRequestMobileLayerURL, {
         mode: esri.layers.FeatureLayer.MODE_SNAPSHOT,
         outFields: ["*"],
         id: serviceRequestLayerId,
         displayOnPan: false
     });
+    serviceRequestLayer.setTimeDefinition(timeExtent);
     map.addLayer(serviceRequestLayer);
     var handle = dojo.connect(serviceRequestLayer, "onUpdateEnd", function (features) {
         serviceRequestSymbol = serviceRequestLayer.renderer.infos[0].symbol;
