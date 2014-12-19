@@ -22,9 +22,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>San Juan County Jet Aircraft Noise Reporting</title>
     <link rel="shortcut icon" href="images/logo.ico" />
-    <link id="stylesheet" href='http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/dojo/dojox/mobile/themes/iPhone/iPhone.css'
-        rel='stylesheet' />
-    <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.5/js/esri/css/esri.css" />
+    <link rel="stylesheet" href="//js.arcgis.com/3.11/dojox/mobile/themes/iphone/iphone.css" />
+    <link rel="stylesheet" href="//js.arcgis.com/3.11/esri/css/esri.css" />
     <link href="styles/serviceRequest.css" rel="stylesheet" type="text/css" />
     <link rel="Stylesheet" id="dynamicStyleSheet" />
     <script type="text/javascript" src="js/baseMapGallery.js"></script>
@@ -41,9 +40,8 @@
                 }]
             };
     </script>
-    <script type="text/javascript" src="http://js.arcgis.com/3.5compact">
+    <script type="text/javascript" src="//js.arcgis.com/3.11/"></script>
 
-    </script>
     <script type="text/javascript" src="js/baseMapGallery.js"></script>
     <script type="text/javascript" src="js/modernizr-2.5.3.js"></script>
     <script type="text/javascript" src="js/locator.js"></script>
@@ -51,9 +49,11 @@
     <script type="text/javascript" src="js/homePage.js"></script>
 </head>
 <body onorientationchange="OrientationChanged();">
-    <div id="map" style="width: 100%; height: 100%;" data-dojo-type="dojox.mobile.View"
-        data-dojo-props="selected: true">
+
+     <div id="map" style="width: 100%; height: 100%;">
     </div>
+
+
     <div id="divUploadDialogContainer" class="divUploadDialogContainer" align="center"
         style="display: none;">
         <table cellpadding="0px" cellspacing="0px" style="width: 100%; height: 100%;">
@@ -261,7 +261,7 @@
                                             onclick="Share('twitter')" />
                                     </td>
                                     <td style="width: 30px;" align="center" id="tdMail">
-                                        <img title="Email" class="imgShare" id="imgMail" src="images/img_email.png" onclick="Share('mail')" />
+                                        <img title="Email" class="imgShare" id="imgMail" src="images/img_email.png" onclick="Share('email')" />
                                     </td>
                                 </tr>
                             </table>

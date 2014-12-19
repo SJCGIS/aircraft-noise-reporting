@@ -1,5 +1,6 @@
-﻿/*
- | Version 10.2
+﻿/*global */
+/*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true */
+/*
  | Copyright 2012 Esri
  |
  | Licensed under the Apache License, Version 2.0 (the "License");

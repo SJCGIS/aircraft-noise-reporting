@@ -1,6 +1,6 @@
 ﻿/*global dojo */
+/*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true */
 /*
- | Version 10.2
  | Copyright 2012 Esri
  |
  | Licensed under the Apache License, Version 2.0 (the "License");
@@ -270,7 +270,7 @@ dojo.declare("js.config", null, {
 
     // Set URL for TinyURL service, and URLs for social media
     MapSharingOptions: {
-        TinyURLServiceURL: "https://api-ssl.bitly.com/v3/shorten?access_token=658b4d4ea4dd8f725c859352bdb593a2a4d5c9f6&longUrl=${0}&format=json",
+        TinyURLServiceURL: "https://api-ssl.bitly.com/v3/shorten?access_token=658b4d4ea4dd8f725c859352bdb593a2a4d5c9f6&longUrl=${0}",
         TinyURLResponseAttribute: "data.url",
         FacebookShareURL: "http://www.facebook.com/sharer.php?u=${0}&t=Jet%20Aircraft%20Noise%20Reporting",
         TwitterShareURL: "http://mobile.twitter.com/compose/tweet?status=Jet%20Aircraft%20Noise%20Reporting ${0}",

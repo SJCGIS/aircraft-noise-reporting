@@ -1,5 +1,6 @@
-﻿/** @license
- | Version 10.2
+﻿/*global */
+/*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true */
+/*
  | Copyright 2012 Esri
  |
  | Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,6 @@
 dojo.require("dojo.window");
 dojo.require("dojo.date");
 dojo.require("dojo.date.locale");
-dojo.require("dojox.mobile.View");
 dojo.require("esri.map");
 dojo.require("esri.tasks.geometry");
 dojo.require("esri.tasks.locator");
@@ -384,7 +384,7 @@ function dojoInit() {
         var zoomExtent;
         var extent = GetQuerystring('extent');
         if (extent != "") {
-            zoomExtent = extent.split(',');
+            zoomExtent = decodeURIComponent(extent).split(',');
         } else {
             zoomExtent = responseObject.DefaultExtent.split(",");
         }

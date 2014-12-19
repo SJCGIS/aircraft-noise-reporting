@@ -1,6 +1,6 @@
 ﻿/*global dojo */
+/*jslint browser:true,sloppy:true,nomen:true,unparam:true,plusplus:true */
 /*
- | Version 10.2
  | Copyright 2012 Esri
  |
  | Licensed under the Apache License, Version 2.0 (the "License");
@@ -257,11 +257,10 @@ dojo.declare("js.config", null, {
 
     // Set URL for TinyURL service, and URLs for social media
     MapSharingOptions: {
-        TinyURLServiceURL: "http://api.bit.ly/v3/shorten?login=esri&apiKey=R_65fd9891cd882e2a96b99d4bda1be00e&uri=${0}&format=json",
-        TinyURLResponseAttribute: "data.url",
+        TinyURLServiceURL: "https://api-ssl.bitly.com/v3/shorten?longUrl=${0}",
         FacebookShareURL: "http://www.facebook.com/sharer.php?u=${0}&t=Citizen%20Service%20Request",
         TwitterShareURL: "http://mobile.twitter.com/compose/tweet?status=Citizen%20Service%20Request ${0}",
-        ShareByMailLink: "mailto:%20?subject=Checkout%20this%20map!&body=${0}"
+        ShareByMailLink: "mailto:%20?subject=Check%20out%20this%20map!&body=${0}"
     },
 
     // set this flag to true to enable uploading images into iOS devices (uses 3rd party application to upload pictures)
